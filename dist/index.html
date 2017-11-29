@@ -13,19 +13,118 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <style>
+            i {
+              border: solid black;
+              border-width: 0 3px 3px 0;
+              display: inline-block;
+              padding: 3px;
+            }
+
+            .right {
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+
+            .left {
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+            }
+
+            .up {
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+            }
+
+            .down {
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+        </style>
+        <script type="text/javascript">
+        function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function auto_refresh() {
+          while (true) {
+            await sleep(5000)
+            for (i=1; i<=20;i++){
+                console.log('refresh')
+                $("#img"+i).attr("src","http://webserver/img/lock.png");
+                await sleep(500)
+            }
+        }
+      }
+        </script>
     </head>
-    <body>
+    <body onload="auto_refresh()">
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+<div class="container">
+    <br/><br/>
+        <p>F5 Status</p>
+        <div class="row">
+          <div class="col-xs-12" align=center>
+              <p align=center>
+
+<img src="img/computer.png" width=80 height=80/>
+<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>
+&nbsp;&nbsp;&nbsp;<img src="img/f5.svg" width=80 height=80 />&nbsp;&nbsp;&nbsp;
+<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>&nbsp;<i class="right"></i>
+&nbsp;&nbsp;&nbsp;<img src="img/server.png" width=60 height=60 />
+
+
+              </p>
+          </div>
+        </div>
+        <br/><br/>
+        <p>Server Side Images</p>
+          <div class="row">
+            <div class="col-xs-12" align=center>
+            <table border="0" cellpadding="0" >
+              <tr>
+                <td><img id="img1" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img2" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img3" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img4" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img5" src="http://webserver/img/image.png" height="80" width="80"/></td>
+              </tr>
+              <tr>
+                <td><img id="img6" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img7" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img8" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img9" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img10" src="http://webserver/img/image.png" height="80" width="80"/></td>
+              </tr>
+              <tr>
+                <td><img id="img11" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img12" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img13" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img14" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img15" src="http://webserver/img/image.png" height="80" width="80"/></td>
+              </tr>
+              <tr>
+                <td><img id="img16" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img17" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img18" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img19" src="http://webserver/img/image.png" height="80" width="80"/></td>
+                <td><img id="img20" src="http://webserver/img/image.png" height="80" width="80"/></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
